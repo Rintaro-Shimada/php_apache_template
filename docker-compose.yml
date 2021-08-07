@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  web_server:
+    build: ./
+    ports:
+      - 80:80
+    volumes:
+      - ./apache/:/var/www/html/
+      - ./php.ini:/usr/local/etc/php/php.ini
+    environment:
+      TZ: "Asia/Tokyo"
+    container_name: 'web_server'
